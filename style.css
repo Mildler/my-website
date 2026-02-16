@@ -1,0 +1,64 @@
+/* behind the curtains */
+:root {
+    --bg-color: rgb(111, 175, 249);
+    --border-std: 0.2rem solid black;
+}
+
+body {
+    margin: 0;
+    background-color: var(--bg-color)
+}
+
+/* top */
+.title-skelly {
+    padding: 0.15rem;
+    background-color: hsl(from var(--bg-color) h s calc(l + 10));
+}
+
+.title-text {
+    font-size: 2rem;
+    text-align: center;
+}
+
+/* formatting the body */
+.made-for-centering-lol {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin-top: 2rem;
+}
+
+.content-container {
+    display: inline-grid;
+    gap: 1rem;
+    margin-left: 3rem;
+    margin-right: 3rem;
+    grid-template-columns:
+    minmax(6rem, 14rem)
+    minmax(16rem, 46rem)
+    minmax(6rem, 14rem);
+    grid-template-areas: 
+    "sidebar-L main sidebar-R"
+    "sidebar-L main sidebar-R"
+    "sidebar-L main sidebar-R";
+}
+
+.nav {
+    grid-area: sidebar-L;
+    
+    border: var(--border-std);
+}
+
+.content-C {
+    grid-area: main;
+
+    border: var(--border-std);
+}
+
+.content-3 {
+    grid-area: sidebar-R;
+
+    border: var(--border-std);
+}
+
+
