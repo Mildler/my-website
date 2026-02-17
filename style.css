@@ -1,18 +1,24 @@
 /* behind the curtains */
 :root {
     --bg-color: rgb(111, 175, 249);
+    --bg-header-color: hsl(from var(--bg-color) h s calc(l + 10));
+    --bg-footer-color: hsl(from var(--bg-color) h s calc(l + 10));
     --border-std: 0.2rem solid black;
+    --header-height: 3rem;
+    --footer-height: 3rem;
 }
 
 body {
     margin: 0;
+
     background-color: var(--bg-color)
 }
 
 /* top */
 .title-skelly {
-    padding: 0.15rem;
-    background-color: hsl(from var(--bg-color) h s calc(l + 10));
+    height: var(--header-height);
+
+    background-color: var(--bg-header-color);
 }
 
 .title-text {
@@ -33,14 +39,19 @@ body {
     gap: 1rem;
     margin-left: 3rem;
     margin-right: 3rem;
+    min-height: calc(100vh - var(--header-height) - var(--footer-height));
+    padding-bottom: 2rem;
+
     grid-template-columns:
-    minmax(6rem, 14rem)
-    minmax(16rem, 46rem)
-    minmax(6rem, 14rem);
+    minmax(6rem, 12rem)
+    minmax(16rem, 32rem)
+    minmax(6rem, 12rem);
+    grid-template-rows:
+    repeat(3, minmax(6rem, 8rem));
     grid-template-areas: 
     "sidebar-L main sidebar-R"
     "sidebar-L main sidebar-R"
-    "sidebar-L main sidebar-R";
+    "sidebar-L main chatbox";
 }
 
 .nav {
@@ -59,6 +70,19 @@ body {
     grid-area: sidebar-R;
 
     border: var(--border-std);
+}
+
+.chatbox {
+    grid-area: chatbox;
+
+    border: var(--border-std);
+}
+
+/* bottom */
+footer {
+    height: var(--footer-height);
+
+    background-color: var(--bg-footer-color);
 }
 
 
