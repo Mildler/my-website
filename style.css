@@ -4,18 +4,26 @@
     --bg-header-color: hsl(from var(--bg-color) h s calc(l + 10));
     --bg-footer-color: hsl(from var(--bg-color) h s calc(l + 10));
     --border-std: 0.2rem solid black;
-    --header-height: 3rem;
+    --header-height: 5rem;
     --footer-height: 3rem;
 }
 
 body {
     margin: 0;
+    font-family:'Courier New', Courier, monospace;
 
     background-color: var(--bg-color)
 }
 
+h2 {
+    text-align: center;
+}
+
 /* top */
 .title-skelly {
+    display: flex;
+    justify-self: top;
+    justify-content: center;
     height: var(--header-height);
 
     background-color: var(--bg-header-color);
@@ -23,7 +31,6 @@ body {
 
 .title-text {
     font-size: 2rem;
-    text-align: center;
 }
 
 /* formatting the body */
@@ -34,6 +41,7 @@ body {
     margin-top: 2rem;
 }
 
+/* home page */
 .content-container {
     display: inline-grid;
     gap: 1rem;
@@ -47,31 +55,44 @@ body {
     minmax(16rem, 32rem)
     minmax(6rem, 12rem);
     grid-template-rows:
-    repeat(3, minmax(6rem, 8rem));
+    auto auto auto;
     grid-template-areas: 
     "sidebar-L main sidebar-R"
     "sidebar-L main sidebar-R"
     "sidebar-L main chatbox";
 }
 
+/* nav */
 .nav {
     grid-area: sidebar-L;
-    
+    row-gap: 1rem;
+
     border: var(--border-std);
 }
 
-.content-C {
+/* middle content*/
+.content-main {
     grid-area: main;
 
     border: var(--border-std);
 }
 
-.content-3 {
+/* tiny about me section*/
+.about-snip {
     grid-area: sidebar-R;
 
     border: var(--border-std);
 }
 
+.pfp {
+    display: block;
+    margin: 1rem auto 0 auto;
+    width: 4rem;
+    height: 4rem;
+    text-align: center;
+}
+
+/* chatbox things*/
 .chatbox {
     grid-area: chatbox;
 
@@ -80,9 +101,36 @@ body {
 
 /* bottom */
 footer {
+    display: flex;
+    justify-content: center;
     height: var(--footer-height);
 
     background-color: var(--bg-footer-color);
+}
+
+/* blog page */
+.blog-container {
+    display: inline-grid;
+    gap: 1rem;
+    margin-left: 3rem;
+    margin-right: 3rem;
+    min-height: calc(100vh - var(--header-height) - var(--footer-height));
+    padding-bottom: 2rem;
+
+    grid-template-columns:
+    minmax(6rem, 12rem)
+    minmax(16rem, 32rem);
+    grid-template-rows:
+    auto auto;
+    grid-template-areas: 
+    "sidebar-L main"
+    "sidebar-L main"
+}
+
+.blog-main {
+    grid-area: main;
+
+    border: var(--border-std);
 }
 
 
