@@ -20,8 +20,7 @@ jobs:
 
       - name: Build site
         run: |
-          cd src
-          node build.js
+          node src/build.js
 
       - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v4
