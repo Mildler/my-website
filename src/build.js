@@ -1,35 +1,32 @@
 const fs = require("fs");
 const path = require("path");
 
-// base paths
-const SRC = path.join(__dirname, "src");
-const DIST = path.join(__dirname, "dist");     
+// folders
+const SRC = __dirname;                 // build.js lives in src/
+const DIST = path.join(__dirname, "../dist");  // output folder at repo root
 const TEMPLATES = path.join(SRC, "templates");
 
 // read posts data
 const posts = JSON.parse(fs.readFileSync(path.join(SRC, "posts.json"), "utf-8"));
 
-// read post template and blog page
+// read templates
 const blogPage = fs.readFileSync(path.join(TEMPLATES, "t-blog.html"), "utf-8");
 const postTemplate = fs.readFileSync(path.join(TEMPLATES, "post.html"), "utf-8");
 
-// dist folder check
+// ensure dist folder exists
 if (!fs.existsSync(DIST)) {
     fs.mkdirSync(DIST);
 }
 
-// copy src files
+// copy basic files
 fs.copyFileSync(path.join(SRC, "index.html"), path.join(DIST, "index.html"));
 fs.copyFileSync(path.join(SRC, "style.css"), path.join(DIST, "style.css"));
 
-// copy images folder recursively
-const IMAGES_SRC = path.join(SRC, "images");
-const IMAGES_DEST = path.join(DIST, "images");
-
-function copyFolder(src, dest) {
+// copy images recursively
+const copyFolder = (src, dest) => {
     if (!fs.existsSync(dest)) fs.mkdirSync(dest);
     const entries = fs.readdirSync(src, { withFileTypes: true });
-    for (let entry of entries) {
+    for (const entry of entries) {
         const srcPath = path.join(src, entry.name);
         const destPath = path.join(dest, entry.name);
         if (entry.isDirectory()) {
@@ -38,24 +35,23 @@ function copyFolder(src, dest) {
             fs.copyFileSync(srcPath, destPath);
         }
     }
-}
+};
 
-copyFolder(IMAGES_SRC, IMAGES_DEST);
+copyFolder(path.join(SRC, "images"), path.join(DIST, "images"));
 
-// generate post history
+// generate post links for blog page
 let postLinks = "";
-
 posts.forEach(post => {
     postLinks += `<li><a href="${post.slug}.html">${post.title}</a></li>`;
 });
 
-// update blog.html
+// write blog.html
 const finalBlog = blogPage.replace("{{posts}}", postLinks);
 fs.writeFileSync(path.join(DIST, "blog.html"), finalBlog);
 
-// generate individual pages for posts
+// generate individual post pages
 posts.forEach(post => {
-    let finalPost = postTemplate
+    const finalPost = postTemplate
         .replace(/{{title}}/g, post.title)
         .replace("{{date}}", post.date)
         .replace("{{content}}", post.content);
