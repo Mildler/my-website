@@ -7,6 +7,17 @@ const posts = JSON.parse(fs.readFileSync("posts.json", "utf-8"));
 const blogPage = fs.readFileSync("templates/t-blog.html", "utf-8");
 const postTemplate = fs.readFileSync("templates/post.html", "utf-8");
 
+// dist folder check
+if (!fs.existsSync("../dist")) {
+    fs.mkdirSync("../dist");
+}
+
+// copy src files
+fs.copyFileSync("index.html", "../dist/index.html"); 
+fs.copyFileSync("style.css", "../dist/style.css");
+fs.cpSync("images", "../dist/images", { recursive: true });
+
+
 // generate post history
 let postLinks = "";
 
@@ -17,13 +28,8 @@ posts.forEach(post => {
 // update post history
 const finalBlog = blogPage.replace("{{posts}}", postLinks);
 
-// dist folder check
-if (!fs.existsSync("dist")) {
-    fs.mkdirSync("dist");
-}
-
 // write blog.html
-fs.writeFileSync("dist/blog.html", finalBlog);
+fs.writeFileSync("../dist/blog.html", finalBlog);
 
 // generate individal pages for posts
 posts.forEach(post => {
@@ -32,7 +38,7 @@ posts.forEach(post => {
     .replace("{{date}}", post.date)
     .replace("{{content}}", post.content);
 
-    fs.writeFileSync(`dist/${post.slug}.html`, finalPost);
+    fs.writeFileSync(`../dist/${post.slug}.html`, finalPost);
 });
 
 console.log("site build successful");
