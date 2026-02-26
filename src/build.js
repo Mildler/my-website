@@ -21,6 +21,7 @@ if (!fs.existsSync(DIST)) {
 // copy basic files
 fs.copyFileSync(path.join(SRC, "index.html"), path.join(DIST, "index.html"));
 fs.copyFileSync(path.join(SRC, "style.css"), path.join(DIST, "style.css"));
+fs.copyFileSync(path.join(SRC, "about-me.html"), path.join(DIST, "about-me.html"));
 
 // copy images recursively
 const copyFolder = (src, dest) => {
