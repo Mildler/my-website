@@ -23,6 +23,7 @@ fs.copyFileSync(path.join(SRC, "index.html"), path.join(DIST, "index.html"));
 fs.copyFileSync(path.join(SRC, "style.css"), path.join(DIST, "style.css"));
 fs.copyFileSync(path.join(SRC, "about-me.html"), path.join(DIST, "about-me.html"));
 fs.copyFileSync(path.join(SRC, "chat.js"), path.join(DIST, "chat.js"));
+fs.copyFileSync(path.join(SRC, "my-art.html"), path.join(DIST, "my-art.html"));
 
 // copy images recursively
 const copyFolder = (src, dest) => {

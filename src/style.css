@@ -80,8 +80,35 @@ h2 {
 /* middle content*/
 .content-main {
     grid-area: main;
+    display: flex;
+    flex-direction: column;
 
     border: var(--border-std);
+}
+
+.image-banner {
+    display: flex;
+    flex-direction: row;
+    padding: 0.2rem;
+    justify-content: space-between;
+    margin-top: auto;
+    gap: 1rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+
+    background-color: rgb(30, 30, 30);
+}
+
+.image-banner img {
+    height: 3rem;
+    width: 4rem;
+}
+
+.banner-caption {
+    text-align: center;
+    font-size: 0.6rem;
+
 }
 
 /* tiny about me section*/
@@ -162,6 +189,12 @@ footer {
     grid-area: main;
 
     border: var(--border-std);
+}
+
+.post-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
 }
 
 
