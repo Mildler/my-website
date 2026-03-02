@@ -1,6 +1,6 @@
 /* behind the curtains */
 :root {
-    --bg-color: rgb(111, 175, 249);
+    --bg-color: rgb(213, 213, 213);
     --bg-header-color: hsl(from var(--bg-color) h s calc(l + 10));
     --bg-footer-color: hsl(from var(--bg-color) h s calc(l + 10));
     --border-std: 0.2rem solid black;
@@ -11,6 +11,7 @@
 body {
     margin: 0;
     font-family:'Courier New', Courier, monospace;
+    /* cursor: url('images/cursor.jpg'), auto; */
 
     background-color: var(--bg-color)
 }
@@ -59,10 +60,10 @@ h2 {
     minmax(16rem, 32rem)
     minmax(6rem, 12rem);
     grid-template-rows:
-    auto auto 1fr;
+    auto 1fr;
     grid-template-areas: 
     "sidebar-L main sidebar-R"
-    "sidebar-L main sidebar-R"
+    "sidebar-L main chatbox"
     "sidebar-L main chatbox";
 }
 
@@ -114,6 +115,11 @@ h2 {
 /* tiny about me section*/
 .about-snip {
     grid-area: sidebar-R;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    overflow-x: hidden;
+    min-height: 0;
 
     border: var(--border-std);
 }
@@ -124,6 +130,8 @@ h2 {
     width: 4rem;
     height: 4rem;
     text-align: center;
+
+    border: var(--border-std);
 }
 
 /* chatbox things*/
@@ -145,11 +153,19 @@ h2 {
     flex-direction: column;
 }
 
-.chat-input-row {
+.chat-input-rows {
     display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+    margin-left: 0.1rem;
+    margin-right: 0.1rem;
 }
 
 #chat-input {
+    min-width: 0;
+}
+
+#username-input {
     min-width: 0;
 }
 

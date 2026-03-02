@@ -1,9 +1,23 @@
 [
     {
-        "title": "test post",
-        "slug": "test-post",
-        "date": "2026-02-24",
-        "content": "just testing out code"
+        "title": "what am i even doing with my life",
+        "slug": "post-4",
+        "date": "2026-03-02",
+        "content": "well, much has happened in one day, and yet nothing has changed. i applied to some aws dco jobs (at l3) and i am hoping to get one so that i can have a higher pay. i will be saddened to resign my ability to work with my girlfriend, but some sacrifices must be made. i'm hoping by attaining this new job, opportunities will arise like moving out and establishing my independence. i spoke with my enrollment counselor and finalized my term to begin my degree progress in the beginning of april. i continued my studying and exploration of blender through the donut tutorial. i look forward to learning cubase by means of tutorials as well. and i intend on learning more about system designs, networking, and more code stuff. yknow, good ol' leetcode. and that said, i have no clue what i am doing; but, i suppose i am fully committed to whatever it is."
+    }
+    ,
+    {
+        "title": "so much to learn in so little time...",
+        "slug": "post-3",
+        "date": "2026-02-28",
+        "content": "i feel so behind the curve. i may have a job, but i want something more for myself. i am trying so desparately to acquire more skills for myself, but it is honestly so difficult to know if i am doing enough, if i am headed in the right direction, what the next steps to take are, and so on and so forth. i feel like i have always had an affinity for coding and computers in general, but i never really explored or even dipped my toes into the waters of what that all entails. i am not setting out to become the greatest hands to ever grace the keyboard, but i do want to be adept enough to be valued monetarily. i want things, now. and, i also want to accomplish my passions as well, which so happen to be adjacent to this. it's all about resolution, graphics, and code coupled with artistry. that is what i think of video games--at least from a dev pov. currently, i am trying to deepen my knowledge of networking and attempting to build a simple http server in c++. it is harrowing with how dense that subject is alone, even at an entry level, but i will keep at it and see where that gets me. on the side, i am still learning blender and honing my sketching ability. still nothing to do with colors. man, do i fear colors. anyway, until the next one."
+    }
+    ,
+    {
+        "title": "i have begun the donut tutorial...",
+        "slug": "post-2",
+        "date": "2026-02-27",
+        "content": "if you are familiar with blender, then you know what the donut tutorial is. and, yes, i have begun the newest (concurrent) tutorial to get familiar with blender's tools and ui. i want to simply get somewhat comfortable with the interface and hopefully produce some models that i envision in my head. if it goes well, i might think about transferring the graphics of my video game. also, i began planning out building my http server. i am just trying to build as much skills as i can, but i feel that i may lack direction. specialization. i don't know what i'm doing, but i feel really motivated to do it."
     }
     ,
     {
@@ -14,9 +28,9 @@
     }
     ,
     {
-        "title": "i have begun the donut tutorial...",
-        "slug": "post-2",
-        "date": "2026-02-27",
-        "content": "if you are familiar with blender, then you know what the donut tutorial is. and, yes, i have begun the newest (concurrent) tutorial to get familiar with blender's tools and ui. i want to simply get somewhat comfortable with the interface and hopefully produce some models that i envision in my head. if it goes well, i might think about transferring the graphics of my video game. also, i began planning out building my http server. i am just trying to build as much skills as i can, but i feel that i may lack direction. specialization. i don't know what i'm doing, but i feel really motivated to do it."
+        "title": "test post",
+        "slug": "test-post",
+        "date": "2026-02-24",
+        "content": "just testing out code"
     }
 ]
