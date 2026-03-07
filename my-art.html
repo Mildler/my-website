@@ -14,20 +14,28 @@
     </header>
 
     <div class="made-for-centering-lol">
-        <div class="blog-container">
+        <div class="art-container">
             <nav class="nav">
                 <h2>Links:</h2>
                 <ul>
                     <li class="nav-link"><a href="index.html">home</a></li>
                     <li class="nav-link"><a href="blog.html">blog posts</a></li>
-                    <li class="nav-link"><a href="/link/">this is a link</a></li>
+                    <li class="nav-link"><a href="about-me.html">about me</a></li>
                 </ul>
             </nav>
-            <div class="blog-main">
-                <ul>
-                    
-                </ul>
+            <div class="art-main">
+                <div class="art-tabs">
+                    <button class="art-tab-links" data-tab="tab1">sketchwork</button>
+                    <button class="art-tab-links" data-tab="tab2">scratchwork</button>
+                </div>
 
+                <div id="tab1" class="art-tab-content active">
+                    <p>PLACEHOLDER FOR SKETCHWORK TAB</p>
+                </div>
+
+                <div id="tab2" class="art-tab-content">
+                    <p>PLACEHOLDER FOR SCRATCHWORK TAB</p>
+                </div>
             </div>
         </div>
     </div>
@@ -35,6 +43,8 @@
     <footer>
         <p>this is where your feet go</p>
     </footer>
+
+    <script src="scripts/tabs.js"></script>
 </body>
 
 </html>

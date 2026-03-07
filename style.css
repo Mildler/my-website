@@ -13,7 +13,8 @@ body {
     font-family:'Courier New', Courier, monospace;
     /* cursor: url('images/cursor.jpg'), auto; */
 
-    background-color: var(--bg-color)
+    background-image: url("images/white-tulips.png");
+    background-size: 14rem 14rem;
 }
 
 h2 {
@@ -38,20 +39,31 @@ h2 {
     font-size: 2rem;
 }
 
+.top-banner {
+    display: flex;
+    justify-content: center;
+    height: var(--footer-height);
+    margin-bottom: 0.4rem;
+
+    background-color: rgb(30, 30, 30);
+}
+
 /* formatting the body */
 .made-for-centering-lol {
     display: flex;
-    justify-content: center;
-    align-content: center;
-    margin-top: 2rem;
+    justify-self: center;
+    margin: 2rem 2rem;
+    flex-direction: column;
+
+    background-color: var(--bg-color);
 }
 
 /* home page */
 .content-container {
     display: grid;
     gap: 1rem;
-    margin-left: 3rem;
-    margin-right: 3rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
     height: calc(100vh - var(--header-height) - var(--footer-height));
     padding-bottom: 2rem;
 
@@ -106,7 +118,7 @@ h2 {
     width: 4rem;
 }
 
-.banner-caption {
+.image-banner-caption {
     text-align: center;
     font-size: 0.6rem;
 
@@ -186,16 +198,14 @@ footer {
 .blog-container {
     display: inline-grid;
     gap: 1rem;
-    margin-left: 3rem;
-    margin-right: 3rem;
+    margin: 1rem 3rem;
     min-height: calc(100vh - var(--header-height) - var(--footer-height));
-    padding-bottom: 2rem;
 
     grid-template-columns:
     minmax(6rem, 12rem)
     minmax(16rem, 32rem);
     grid-template-rows:
-    auto auto;
+    auto 1fr;
     grid-template-areas: 
     "sidebar-L main"
     "sidebar-L main"
@@ -211,6 +221,64 @@ footer {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+}
+
+/* art page */
+.art-container {
+    display: inline-grid;
+    gap: 1rem;
+    margin: 1rem 3rem;
+    min-height: calc(100vh - var(--header-height) - var(--footer-height));
+
+    grid-template-columns:
+    minmax(6rem, 12rem)
+    minmax(16rem, 48rem);
+    grid-template-rows:
+    auto 1fr;
+    grid-template-areas: 
+    "sidebar-L main"
+    "sidebar-L main"
+}
+
+.art-main {
+    grid-area: main;
+    
+    border: var(--border-std);
+}
+
+.art-tabs {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    overflow: hidden;
+    height: 3rem;
+    gap: 2rem;
+
+    background-color: var(--bg-header-color);
+}
+
+.art-tabs button {
+    height: 100%;
+    padding: 0 1rem;
+
+    border-color: hsl(from var(--bg-header-color) h s calc(l - 1));
+    background-color: inherit;
+}
+
+.art-tabs button:hover {
+    background-color: hsl(from var(--bg-header-color) h s calc(l - 3));
+}
+
+.art-tabs button.active {
+    background-color: hsl(from var(--bg-header-color) h s calc(l - 5));
+}
+
+.art-tab-content {
+    display: none;
+}
+
+.art-tab-content.active {
+    display: block;
 }
 
 
