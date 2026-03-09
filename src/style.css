@@ -76,7 +76,6 @@ h2 {
     grid-template-areas: 
     "sidebar-L main sidebar-R"
     "sidebar-L main chatbox"
-    "sidebar-L main chatbox";
 }
 
 /* nav */
@@ -188,10 +187,16 @@ h2 {
 /* bottom */
 footer {
     display: flex;
+    padding-top: 0.65rem;
     justify-content: center;
     height: var(--footer-height);
 
     background-color: var(--bg-footer-color);
+}
+
+.github-icon {
+    width: 1.65rem;
+    height: 1.65rem;
 }
 
 /* blog page */
@@ -199,7 +204,7 @@ footer {
     display: inline-grid;
     gap: 1rem;
     margin: 1rem 3rem;
-    min-height: calc(100vh - var(--header-height) - var(--footer-height));
+    height: calc(100vh - var(--header-height) - var(--footer-height));
 
     grid-template-columns:
     minmax(6rem, 12rem)
@@ -225,24 +230,25 @@ footer {
 
 /* art page */
 .art-container {
-    display: inline-grid;
+    display: grid;
     gap: 1rem;
     margin: 1rem 3rem;
-    min-height: calc(100vh - var(--header-height) - var(--footer-height));
+    height: calc(100vh - var(--header-height) - var(--footer-height));
 
     grid-template-columns:
     minmax(6rem, 12rem)
     minmax(16rem, 48rem);
-    grid-template-rows:
-    auto 1fr;
-    grid-template-areas: 
-    "sidebar-L main"
-    "sidebar-L main"
+    grid-template-rows: auto;
+    grid-template-areas: "sidebar-L art-main";
 }
 
 .art-main {
-    grid-area: main;
-    
+    grid-area: art-main;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    overflow-x: hidden;
+
     border: var(--border-std);
 }
 
@@ -275,6 +281,16 @@ footer {
 
 .art-tab-content {
     display: none;
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    text-align: center;
+    padding: 1rem 2rem;
+}
+
+.art-tab-content img {
+    width: 16rem;
+    height: 16rem;
 }
 
 .art-tab-content.active {
